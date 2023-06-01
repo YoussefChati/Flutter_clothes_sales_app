@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/screens/cart/cart_controller.dart';
+import 'package:flutter_application_1/screens/home/home.dart';
 import 'package:flutter_application_1/screens/signin_screen.dart';
 import 'package:get/get.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         // ignore: deprecated_member_use
         accentColor: const Color(0xffffebc7),
       ),
-      home: const SignInScreen(),
+      home: HomePage(),
     );
   }
 }
