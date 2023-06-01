@@ -29,9 +29,6 @@ class HomePage extends StatelessWidget {
             SearchInput(),
             NewArrival(),
             BestSell(),
-            ElevatedButton(
-                onPressed: () => Get.to(() => ShoppingCart()),
-                child: Text('Go to Cart'))
           ],
         ),
       ),

@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/screens/cart/cart_controller.dart';
 import 'package:flutter_application_1/screens/signin_screen.dart';
 import 'package:get/get.dart';
-import 'package:flutter_application_1/models/clothes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

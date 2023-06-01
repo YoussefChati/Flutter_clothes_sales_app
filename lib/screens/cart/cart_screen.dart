@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/cart/payment_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter_application_1/models/clothes.dart';
 import 'package:flutter_application_1/screens/cart/cart_controller.dart';
+// Import the PaymentPage
 
 class ShoppingCart extends StatelessWidget {
   final CartController cartController = Get.put(CartController());
@@ -68,6 +70,15 @@ class ShoppingCart extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PaymentPage()),
+              );
+            },
+            child: Text('Proceed to Payment'),
           ),
         ],
       ),
