@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // ignore: deprecated_member_use
         accentColor: const Color(0xffffebc7),
       ),
-      home: HomePage(),
+      home: SignInScreen(),
     );
   }
 }
