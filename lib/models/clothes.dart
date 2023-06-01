@@ -33,15 +33,34 @@ class Clothes {
     };
   }
 
-  static Future<void> saveClothesToFirestore() async {
+  Future<void> saveClothesToFirestore() async {
     CollectionReference clothesCollection =
         FirebaseFirestore.instance.collection('clothes');
 
-    List<Clothes> clothesList = generateClothes();
+    await clothesCollection.add(toMap());
+  }
 
-    for (Clothes clothes in clothesList) {
-      await clothesCollection.add(clothes.toMap());
+  static Future<List<Clothes>> getClothesFromFirestore() async {
+    QuerySnapshot snapshot =
+        await FirebaseFirestore.instance.collection('clothes').get();
+
+    List<Clothes> clothesList = [];
+
+    for (var doc in snapshot.docs) {
+      Map<String, dynamic>? data = doc.data() as Map<String, dynamic>?;
+
+      Clothes clothes = Clothes(
+        data!['title'],
+        data['subtitle'],
+        data['price'],
+        data['imageUrl'],
+        List<String>.from(data['detailUrl']),
+      );
+
+      clothesList.add(clothes);
     }
+
+    return clothesList;
   }
 
   static List<Clothes> generateClothes() {

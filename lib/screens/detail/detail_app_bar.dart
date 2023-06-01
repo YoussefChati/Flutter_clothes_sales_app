@@ -14,12 +14,6 @@ class DetailAppbar extends StatefulWidget {
 }
 
 class _DetailAppbarState extends State<DetailAppbar> {
-  final List<Color> colors = [
-    Color(0xFFE6CFC6),
-    Color(0xFFEEDFB5),
-    Color(0xFFCAE2C5),
-    Color(0xFFBAE6EE),
-  ];
   final CarouselController _controller = CarouselController();
   int _currentpage = 0;
   int _currentColor = 0;
@@ -72,30 +66,6 @@ class _DetailAppbarState extends State<DetailAppbar> {
                       ),
                     ))
                 .toList(),
-          ),
-        ),
-        Positioned(
-          bottom: 30,
-          right: 30,
-          child: Container(
-            height: 175,
-            width: 50,
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.3),
-                borderRadius: BorderRadius.circular(30)),
-            child: ListView.separated(
-                padding: EdgeInsets.zero,
-                itemBuilder: (context, index) => GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _currentColor = index;
-                        });
-                      },
-                      child: ColorPicker(_currentColor == index, colors[index]),
-                    ),
-                separatorBuilder: (_, index) => SizedBox(height: 3),
-                itemCount: colors.length),
           ),
         ),
         Container(

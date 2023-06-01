@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home/home.dart';
+
+import '../home/home.dart';
 
 class PaymentSuccessPage extends StatelessWidget {
   @override
@@ -28,6 +31,16 @@ class PaymentSuccessPage extends StatelessWidget {
             Text(
               'The payment was successful.',
               style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 32),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Text('Go to Home Page'),
             ),
           ],
         ),
